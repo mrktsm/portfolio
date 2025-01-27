@@ -1,14 +1,12 @@
 import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
 import "./App.css";
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
     <>
-      <span>Hi, I'm Marko!</span>
+      <span style={{ fontFamily: "Hooey-Regular" }} className="text-9xl">
+        Hi, I'm Marko!
+      </span>
     </>
   );
 }

@@ -68,3 +68,12 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+
+@font-face {
+  font-family: "Hooey-Regular";
+  src: url("./assets/fonts/Hooey-Regular.woff2") format("woff2"),
+    url("./assets/fonts/Hooey-Regular.woff") format("woff"),
+    url("./assets/fonts/Hooey-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
