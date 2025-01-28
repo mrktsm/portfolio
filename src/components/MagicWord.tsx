@@ -169,12 +169,12 @@ export const MagicWord: React.FC = () => {
   useEffect(() => {
     const element: any = document.querySelector(".shake");
     if (!shakeEnabled || iterations >= 5) return;
-    setIterations((prev) => prev + 1);
     // Initialize the interval without the delay for class removal and re-addition
     const interval = setInterval(() => {
       element.classList.remove("shake"); // Remove the shake class
       void element.offsetWidth; // Trigger reflow/repaint to ensure the class removal is processed
       element.classList.add("shake"); // Re-add the shake class
+      setIterations((prev) => prev + 1);
     }, 4000); // Repeat every 2 seconds
 
     return () => clearInterval(interval);
@@ -188,7 +188,10 @@ export const MagicWord: React.FC = () => {
           className="fixed top-0 left-0 w-full h-full pointer-events-none z-50"
         />
       )}
-      <span onClick={handleClick} className="shake cursor-pointer">
+      <span
+        onClick={handleClick}
+        className="shake cursor-pointer text-green-900"
+      >
         magic
       </span>
     </>
