@@ -119,6 +119,8 @@ export const MagicWord: React.FC = () => {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
   const fireworksDisplayRef = useRef<number | null>(null);
   const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const [shakeEnabled, setShakeEnabled] = useState(true); // Track whether shaking is enabled
+  const [iterations, setIterations] = useState(0);
 
   useEffect(() => {
     if (showFireworks && canvasRef.current) {
@@ -146,7 +148,7 @@ export const MagicWord: React.FC = () => {
 
       timeoutRef.current = setTimeout(() => {
         setShowFireworks(false);
-      }, 3000);
+      }, 4400);
 
       return () => {
         if (fireworksDisplayRef.current) {
@@ -160,8 +162,23 @@ export const MagicWord: React.FC = () => {
   }, [showFireworks]);
 
   const handleClick = (): void => {
+    setShakeEnabled(false);
     setShowFireworks(true);
   };
+
+  useEffect(() => {
+    const element: any = document.querySelector(".shake");
+    if (!shakeEnabled || iterations >= 5) return;
+    setIterations((prev) => prev + 1);
+    // Initialize the interval without the delay for class removal and re-addition
+    const interval = setInterval(() => {
+      element.classList.remove("shake"); // Remove the shake class
+      void element.offsetWidth; // Trigger reflow/repaint to ensure the class removal is processed
+      element.classList.add("shake"); // Re-add the shake class
+    }, 4000); // Repeat every 2 seconds
+
+    return () => clearInterval(interval);
+  }, [shakeEnabled, iterations]);
 
   return (
     <>

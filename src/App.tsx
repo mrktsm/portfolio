@@ -2,12 +2,15 @@ import { MagicWord } from "./components/MagicWord.js";
 
 const App = () => {
   return (
-    <div className="flex flex-col justify-center items-center h-screen bg-white">
+    <div className="flex flex-col justify-center items-center h-screen bg-amber-50">
       <span
         className="text-9xl text-green-600 inline-block"
         style={{ fontFamily: "Hooey-Regular" }}
       >
         Hi, I'm Marko!
+        {/* <span className="wave text-6xl" style={{ verticalAlign: "middle" }}>
+          👋
+        </span>{" "} */}
       </span>
       <span className="text-lg font-semibold text-green-800 flex flex-col items-center">
         <p>
@@ -16,7 +19,7 @@ const App = () => {
         </p>
         <p>
           crafting impactful software with React, AI, and a touch of code{" "}
-          <MagicWord />
+          <MagicWord />.
         </p>
       </span>
     </div>
