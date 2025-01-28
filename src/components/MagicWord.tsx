@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef } from "react";
 
 interface Particle {
   x: number;
@@ -148,7 +148,7 @@ export const MagicWord: React.FC = () => {
 
       timeoutRef.current = setTimeout(() => {
         setShowFireworks(false);
-      }, 4400);
+      }, 4000);
 
       return () => {
         if (fireworksDisplayRef.current) {
@@ -190,7 +190,7 @@ export const MagicWord: React.FC = () => {
       )}
       <span
         onClick={handleClick}
-        className="shake cursor-pointer text-green-900"
+        className="shake cursor-pointer text-green-900 font-semibold"
       >
         magic
       </span>
