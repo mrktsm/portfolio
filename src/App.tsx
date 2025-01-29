@@ -271,7 +271,7 @@ const App = () => {
                 </h2>
                 <p className="text-sm mb-2">
                   <a
-                    href="mailto:marko@example.com"
+                    href="https://github.com/mrktsm/portfolio"
                     className="hover:text-green-300"
                   >
                     See the code on GitHub.
