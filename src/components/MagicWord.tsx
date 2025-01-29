@@ -37,7 +37,12 @@ class Firework {
   reset(): void {
     this.x = Math.random() * this.canvasWidth;
     this.y = this.canvasHeight;
-    this.color = `hsl(${Math.random() * 360}, 100%, 60%)`;
+    // this.color = `hsl(${Math.random() * 360}, 100%, 60%)`;
+    const hue = 90 + Math.random() * 60; // Hue range for greens (90-150)
+    const saturation = 50 + Math.random() * 50; // Saturation range (50-100%)
+    const lightness = 40 + Math.random() * 20; // Lightness range (40-60%)
+    this.color = `hsl(${hue}, ${saturation}%, ${lightness}%)`;
+
     this.dx = (Math.random() - 0.5) * 3;
     this.dy = -(Math.random() * 10 + 10);
     this.exploded = false;

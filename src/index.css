@@ -12,7 +12,7 @@ body,
 .shake {
   display: inline-block;
   animation: shake 0.5s ease-in-out infinite; /* 2-second interval for the full cycle */
-  animation-iteration-count: 2;
+  animation-iteration-count: 1;
   animation-delay: 3s;
 }
 
