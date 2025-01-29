@@ -257,7 +257,7 @@ const App = () => {
                 </p>
                 <p className="text-sm">
                   <a
-                    href="https://linkedin.com/in/markotsymbaliuk"
+                    href="www.linkedin.com/in/marko-tsymbaliuk-55615430b"
                     target="_blank"
                     className="hover:text-green-300"
                   >
@@ -267,7 +267,7 @@ const App = () => {
               </div>
               <div className="text-right">
                 <h2 className="text-sm -mr-3 mt-10">
-                  Powered by React and more code than I want to admit {" : )"}
+                  Runs on React and pure determination.{" : )"}
                 </h2>
                 <p className="text-sm mb-2">
                   <a
