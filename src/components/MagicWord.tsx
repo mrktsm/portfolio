@@ -173,14 +173,14 @@ export const MagicWord: React.FC = () => {
 
   useEffect(() => {
     const element: any = document.querySelector(".shake");
-    if (!shakeEnabled || iterations >= 5) return;
+    if (!shakeEnabled || iterations >= 7) return;
     // Initialize the interval without the delay for class removal and re-addition
     const interval = setInterval(() => {
       element.classList.remove("shake"); // Remove the shake class
       void element.offsetWidth; // Trigger reflow/repaint to ensure the class removal is processed
       element.classList.add("shake"); // Re-add the shake class
       setIterations((prev) => prev + 1);
-    }, 4000); // Repeat every 2 seconds
+    }, 4200); // Repeat every 2 seconds
 
     return () => clearInterval(interval);
   }, [shakeEnabled, iterations]);
