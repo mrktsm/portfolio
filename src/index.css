@@ -9,6 +9,12 @@ body,
   scroll-behavior: smooth;
 }
 
+.gravitas-one-regular {
+  font-family: "Gravitas One", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
 .shake {
   display: inline-block;
   animation: shake 0.5s ease-in-out infinite; /* 2-second interval for the full cycle */
@@ -36,6 +42,12 @@ body,
   animation-iteration-count: 1; /* Never stop waving :) */
   transform-origin: 70% 70%; /* Pivot around the bottom-left palm */
   display: inline-block;
+}
+
+.asset-regular {
+  font-family: "Asset", serif;
+  font-weight: 400;
+  font-style: normal;
 }
 
 @keyframes wave-animation {

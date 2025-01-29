@@ -1,5 +1,6 @@
 import { BsArrowDown } from "react-icons/bs";
 import { MagicWord } from "./components/MagicWord.js";
+import { FaRegHandPeace } from "react-icons/fa6";
 
 const App = () => {
   const projects = [
@@ -72,8 +73,16 @@ const App = () => {
       {/* Full-Height Section */}
       <div className="min-h-screen flex flex-col justify-center items-center text-center relative">
         {/* <h1 className="text-9xl text-green-800 ">Hi, I'm Marko!</h1> */}
-        <img src="src/assets/images/hi_im_marko.png" className="h-28" />
-        <div className="text-lg text-green-950 mt-4">
+        <div className="flex flex-row mt-6">
+          {/* <img src="src/assets/images/hi_im_marko.png" className="h-28" />{" "} */}
+          <h1 className="ml-13 text-6xl text-green-800 mr-4 asset-regular tracking-tighter">
+            Hi, I'm Marko!{" "}
+          </h1>
+          {/* <div className="wave text-green-800 text-7xl -mt-3 transform rotate-50">
+            <FaRegHandPeace />
+          </div> */}
+        </div>
+        <div className="text-lg text-green-950 mt-6">
           <p>
             Software Developer and Computer Science student at Gettysburg
             College,
@@ -83,7 +92,6 @@ const App = () => {
             of code <MagicWord />.
           </p>
         </div>
-
         {/* Arrow Fixed to Bottom of Viewport */}
         <div className="absolute bottom-5 text-green-950 flex flex-col items-center text-sm">
           <p>for the good stuff</p>
