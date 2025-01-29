@@ -118,7 +118,10 @@ const App = () => {
                 </div>
               ) : (
                 <div className="w-full aspect-video bg-amber-50 border-2 border-green-800 flex items-center justify-center transition-transform duration-300 hover:scale-105">
-                  <h3 className="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-green-800 to-green-300">
+                  <h3
+                    className="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-green-800 to-green-300 inter-300"
+                    style={{ fontFamily: "Inter" }}
+                  >
                     Dermafyr
                   </h3>
                 </div>
