@@ -22,7 +22,7 @@ const App = () => {
     {
       title: "Spamurai",
       subtitle: "AI Email Companion",
-      imageUrl: "./public/images/spamurai_white_2.png",
+      imageUrl: "/images/spamurai_white_2.png",
       description: "A full-stack web application with real-time features.",
       technologies: [
         { icon: <FaReact />, name: "React" },
@@ -51,7 +51,7 @@ const App = () => {
     {
       title: "Climately",
       subtitle: "HackHarvard '24",
-      imageUrl: "./public/images/climately-final.png",
+      imageUrl: "/images/climately-final.png",
       description: "A full-stack web application with real-time features.",
       technologies: [
         { icon: <FaReact />, name: "React" },
@@ -64,7 +64,7 @@ const App = () => {
     {
       title: "Thesaurus Rex",
       subtitle: "Dictionary at a Click",
-      imageUrl: "./public/images/trexpng-cover-2.png",
+      imageUrl: "/images/trexpng-cover-2.png",
       description: "A full-stack web application with real-time features.",
       technologies: [
         { icon: <FaReact />, name: "React" },
