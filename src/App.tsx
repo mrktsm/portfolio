@@ -25,11 +25,11 @@ const App = () => {
       imageUrl: "public/images/spamurai_white_2.png",
       description: "A full-stack web application with real-time features.",
       technologies: [
-        <FaReact />,
-        <SiFastapi />,
-        <BiLogoPostgresql />,
-        <SiTensorflow />,
-        <FaAws />,
+        { icon: <FaReact />, name: "React" },
+        { icon: <SiFastapi />, name: "FastAPI" },
+        { icon: <BiLogoPostgresql />, name: "PostgreSQL" },
+        { icon: <SiTensorflow />, name: "TensorFlow" },
+        { icon: <FaAws />, name: "AWS" },
       ],
       link: "https://github.com/mrktsm/spamurai",
     },
@@ -38,15 +38,15 @@ const App = () => {
       subtitle: "YCP '24 Winner",
       description: "A full-stack web application with real-time features.",
       technologies: [
-        <FaReact />,
-        <IoLogoElectron />,
-        <SiFastapi />,
-        <SiTensorflow />,
-        <SiOllama />,
-        <GrMysql />,
-        <FaRaspberryPi />,
+        { icon: <FaReact />, name: "React" },
+        { icon: <IoLogoElectron />, name: "Electron" },
+        { icon: <SiFastapi />, name: "FastAPI" },
+        { icon: <SiTensorflow />, name: "TensorFlow" },
+        { icon: <SiOllama />, name: "Ollama" },
+        { icon: <GrMysql />, name: "MySQL" },
+        { icon: <FaRaspberryPi />, name: "Raspberry Pi" },
       ],
-      link: "https://github.com/mrktsm/spamurai",
+      link: "https://github.com/mrktsm/dermafyr",
     },
     {
       title: "Climately",
@@ -54,10 +54,10 @@ const App = () => {
       imageUrl: "public/images/climately-final.png",
       description: "A full-stack web application with real-time features.",
       technologies: [
-        <FaReact />,
-        <SiSpringboot />,
-        <SiGooglecloud />,
-        <PiOpenAiLogoLight />,
+        { icon: <FaReact />, name: "React" },
+        { icon: <SiSpringboot />, name: "Spring Boot" },
+        { icon: <SiGooglecloud />, name: "Google Cloud" },
+        { icon: <PiOpenAiLogoLight />, name: "OpenAI" },
       ],
       link: "https://github.com/mrktsm/spamurai",
     },
@@ -66,7 +66,11 @@ const App = () => {
       subtitle: "Dictionary at a Click",
       imageUrl: "public/images/trexpng-cover-2.png",
       description: "A full-stack web application with real-time features.",
-      technologies: [<FaReact />, <SiSpringboot />, <PiOpenAiLogoLight />],
+      technologies: [
+        { icon: <FaReact />, name: "React" },
+        { icon: <SiSpringboot />, name: "Spring Boot" },
+        { icon: <PiOpenAiLogoLight />, name: "OpenAI" },
+      ],
       link: "https://github.com/mrktsm/spamurai",
     },
   ];
@@ -198,17 +202,71 @@ const App = () => {
                 </span>
                 <div className="flex flex-wrap gap-2 mt-4 text-lg">
                   {project.technologies.map((tech, index) => (
-                    <span
-                      key={index}
-                      // className="bg-amber-100 px-2 py-1 rounded-md"
-                    >
-                      {tech}
+                    <span key={index} className="relative group">
+                      <span className="absolute hidden group-hover:block bg-black text-white text-xs rounded px-2 py-1 -top-8">
+                        {tech.name}
+                      </span>
+                      {tech.icon}
                     </span>
                   ))}
                 </div>
               </div>
             </a>
           ))}
+        </div>
+        <div className="text-left mt-24">
+          <p className="text-lg text-green-950">
+            Want to see more projects? Check out{" "}
+            <a
+              href="https://github.com/mrktsm"
+              target="_blank"
+              className="text-lg text-green-800 hover:text-green-600"
+            >
+              my GitHub
+            </a>
+            !
+          </p>
+        </div>
+      </div>
+      <div className="bg-green-950 text-amber-50 py-8 mt-12">
+        <div className="max-w-5xl mx-auto px-8">
+          <div className="flex justify-between items-center">
+            <div className="text-left max-w-lg">
+              <h2 className="text-2xl mb-4">Contact me:</h2>
+              <p className="text-sm mb-2">
+                Have any questions or want to collaborate? Reach out to me!
+              </p>
+              <p className="text-sm mb-2">
+                <a
+                  href="mailto:marko@example.com"
+                  className=" hover:text-green-300"
+                >
+                  ➔ Email
+                </a>
+              </p>
+              <p className="text-sm mb-2">
+                <a
+                  href="https://github.com/mrktsm"
+                  target="_blank"
+                  className=" hover:text-green-300"
+                >
+                  ➔ GitHub
+                </a>
+              </p>
+              <p className="text-sm">
+                <a
+                  href="https://linkedin.com/in/markotsymbaliuk"
+                  target="_blank"
+                  className=" hover:text-green-300"
+                >
+                  ➔ LinkedIn
+                </a>
+              </p>
+            </div>
+            <div className="text-right max-w-lg">
+              <p className="text-sm">Built with questionable decision-making</p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
