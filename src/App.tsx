@@ -98,9 +98,9 @@ const App = () => {
   return (
     <div className="bg-amber-50">
       {/* Top Navigation */}
-      <div className="absolute top-5 right-5 flex space-x-6">
+      <div className="absolute top-5 right-5 flex space-x-6 z-50">
         <a
-          href="#about"
+          href="#About"
           className="text-green-900 text-lg hover:text-green-600"
         >
           About Me
@@ -112,7 +112,7 @@ const App = () => {
           Projects
         </a>
         <a
-          href="#Contact"
+          href="#contact"
           className="text-green-900 text-lg hover:text-green-600"
         >
           Contact
@@ -126,7 +126,10 @@ const App = () => {
       </div>
 
       {/* Full-Height Section */}
-      <div className="min-h-screen flex flex-col justify-center items-center text-center relative">
+      <div
+        id="About"
+        className="min-h-screen flex flex-col justify-center items-center text-center relative"
+      >
         <div className="flex flex-row mt-6">
           <h1 className="ml-13 text-6xl text-green-800 mr-4 asset-regular tracking-tighter">
             Hi, I'm Marko!{" "}
@@ -228,43 +231,52 @@ const App = () => {
           </p>
         </div>
       </div>
-      <div className="bg-green-950 text-amber-50 py-8 mt-12">
-        <div className="max-w-5xl mx-auto px-8">
-          <div className="flex justify-between items-center">
-            <div className="text-left max-w-lg">
-              <h2 className="text-2xl mb-4">Contact me:</h2>
-              <p className="text-sm mb-2">
-                Have any questions or want to collaborate? Reach out to me!
-              </p>
-              <p className="text-sm mb-2">
-                <a
-                  href="mailto:marko@example.com"
-                  className=" hover:text-green-300"
-                >
-                  ➔ Email
-                </a>
-              </p>
-              <p className="text-sm mb-2">
-                <a
-                  href="https://github.com/mrktsm"
-                  target="_blank"
-                  className=" hover:text-green-300"
-                >
-                  ➔ GitHub
-                </a>
-              </p>
-              <p className="text-sm">
-                <a
-                  href="https://linkedin.com/in/markotsymbaliuk"
-                  target="_blank"
-                  className=" hover:text-green-300"
-                >
-                  ➔ LinkedIn
-                </a>
-              </p>
-            </div>
-            <div className="text-right max-w-lg">
-              <p className="text-sm">Built with questionable decision-making</p>
+      <div id="contact" className="bg-green-950 text-amber-50 pb-40 mt-12">
+        <div className="bg-green-950 text-amber-50 mt-12">
+          <div className="max-w-5xl mx-auto px-8">
+            <div className="flex justify-between items-start w-full">
+              <div className="text-left">
+                <h2 className="text-sm mt-10 mb-4">Contact me: </h2>
+                <p className="text-sm mb-2">
+                  <a
+                    href="mailto:marko@example.com"
+                    className="hover:text-green-300"
+                  >
+                    ➔ Email
+                  </a>
+                </p>
+                <p className="text-sm mb-2">
+                  <a
+                    href="https://github.com/mrktsm"
+                    target="_blank"
+                    className="hover:text-green-300"
+                  >
+                    ➔ GitHub
+                  </a>
+                </p>
+                <p className="text-sm">
+                  <a
+                    href="https://linkedin.com/in/markotsymbaliuk"
+                    target="_blank"
+                    className="hover:text-green-300"
+                  >
+                    ➔ LinkedIn
+                  </a>
+                </p>
+              </div>
+              <div className="text-right">
+                <h2 className="text-sm -mr-3 mt-10">
+                  Powered by React and more code than I want to admit {" : )"}
+                </h2>
+                <p className="text-sm mb-2">
+                  <a
+                    href="mailto:marko@example.com"
+                    className="hover:text-green-300"
+                  >
+                    See the code on GitHub.
+                  </a>
+                </p>
+              </div>
             </div>
           </div>
         </div>
