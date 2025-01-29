@@ -59,7 +59,7 @@ const App = () => {
         { icon: <SiGooglecloud />, name: "Google Cloud" },
         { icon: <PiOpenAiLogoLight />, name: "OpenAI" },
       ],
-      link: "https://github.com/mrktsm/spamurai",
+      link: "https://github.com/mrktsm/climately-extension",
     },
     {
       title: "Thesaurus Rex",
@@ -71,7 +71,7 @@ const App = () => {
         { icon: <SiSpringboot />, name: "Spring Boot" },
         { icon: <PiOpenAiLogoLight />, name: "OpenAI" },
       ],
-      link: "https://github.com/mrktsm/spamurai",
+      link: "https://github.com/mrktsm/thesaurus-rex",
     },
   ];
 
@@ -118,7 +118,8 @@ const App = () => {
           Contact
         </a>
         <a
-          href="#Resume"
+          href="/markos-updated-resume.pdf"
+          download="MarkoTsymbaliuk_Resume.pdf"
           className="text-green-900 text-lg hover:text-green-600"
         >
           Resume
