@@ -9,14 +9,14 @@ const App = () => {
   const projects = [
     {
       title: "CodeCafe",
-      imageUrl: "src/assets/images/codecafe2.png",
+      imageUrl: "public/images/codecafe2.png",
       description: "A full-stack web application with real-time features.",
       technologies: ["React", "Spring Boot", "PostgreSQL"],
       link: "https://github.com/mrktsm/spamurai",
     },
     {
       title: "Spamurai",
-      imageUrl: "src/assets/images/spamurai_white_2.png",
+      imageUrl: "public/images/spamurai_white_2.png",
       description: "A full-stack web application with real-time features.",
       technologies: ["React", "Spring Boot", "PostgreSQL"],
       link: "https://github.com/mrktsm/spamurai",
@@ -29,14 +29,14 @@ const App = () => {
     },
     {
       title: "Climately",
-      imageUrl: "src/assets/images/climately-final.png",
+      imageUrl: "public/images/climately-final.png",
       description: "A full-stack web application with real-time features.",
       technologies: ["React", "Spring Boot", "PostgreSQL"],
       link: "https://github.com/mrktsm/spamurai",
     },
     {
       title: "Thesaurus Rex",
-      imageUrl: "src/assets/images/trexpng-cover.png",
+      imageUrl: "public/images/trexpng-cover.png",
       description: "A full-stack web application with real-time features.",
       technologies: ["React", "Spring Boot", "PostgreSQL"],
       link: "https://github.com/mrktsm/spamurai",
