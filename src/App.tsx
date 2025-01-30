@@ -129,7 +129,7 @@ const App = () => {
       {/* Full-Height Section */}
       <div
         id="About"
-        className="min-h-screen flex flex-col justify-center items-center text-center relative px-3 whitespace-nowrap"
+        className="min-h-screen flex flex-col justify-center items-center text-center relative px-4 whitespace-nowrap"
       >
         <div className="flex flex-col items-center mt-6">
           <h1
@@ -272,7 +272,7 @@ const App = () => {
                 </p>
               </div>
               <div className="text-right">
-                <h2 className="text-sm -mr-3 mt-10">
+                <h2 className="text-sm mt-10">
                   Runs on React and pure determination.{" : )"}
                 </h2>
                 <p className="text-sm mb-2">
