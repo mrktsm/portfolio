@@ -234,7 +234,7 @@ export const MagicWord: React.FC = () => {
       <span
         onClick={handleClick}
         onMouseEnter={startAnimation}
-        className="cursor-pointer text-green-900 font-semibold shake"
+        className="cursor-pointer text-green-900 font-semibold shake hover:text-green-700"
       >
         {text.split("").map((letter, index) => (
           <span
