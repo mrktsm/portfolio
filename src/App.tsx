@@ -129,7 +129,7 @@ const App = () => {
       {/* Full-Height Section */}
       <div
         id="About"
-        className="min-h-screen flex flex-col justify-center items-center text-center relative px-3"
+        className="min-h-screen flex flex-col justify-center items-center text-center relative px-3 whitespace-nowrap"
       >
         <div className="flex flex-col items-center mt-6">
           <h1
