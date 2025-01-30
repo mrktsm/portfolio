@@ -126,6 +126,10 @@ export const MagicWord: React.FC = () => {
   const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const [shakeEnabled, setShakeEnabled] = useState(true); // Track whether shaking is enabled
   const [iterations, setIterations] = useState(0);
+  const [activeIndex, setActiveIndex] = useState(-1);
+  const [isAnimating, setIsAnimating] = useState(false);
+  const timeoutsRef = useRef<number[]>([]);
+  const text = "magic";
 
   useEffect(() => {
     if (showFireworks && canvasRef.current) {
@@ -167,8 +171,9 @@ export const MagicWord: React.FC = () => {
   }, [showFireworks]);
 
   const handleClick = (): void => {
-    setShakeEnabled(false);
     setShowFireworks(true);
+    setShakeEnabled(false);
+    setTimeout(() => setShowFireworks(false), 2000);
   };
 
   useEffect(() => {
@@ -185,6 +190,39 @@ export const MagicWord: React.FC = () => {
     return () => clearInterval(interval);
   }, [shakeEnabled, iterations]);
 
+  useEffect(() => {
+    return () => {
+      timeoutsRef.current.forEach((timeout) => clearTimeout(timeout));
+    };
+  }, []);
+
+  const startAnimation = () => {
+    if (isAnimating) return;
+    setIsAnimating(true);
+
+    // Clear any existing timeouts
+    timeoutsRef.current.forEach((timeout) => clearTimeout(timeout));
+    timeoutsRef.current = [];
+
+    // Animate each letter sequentially
+    text.split("").forEach((_, index) => {
+      const timeout = setTimeout(() => {
+        setActiveIndex(index);
+
+        // After the last letter, reset
+        if (index === text.length - 1) {
+          const resetTimeout = setTimeout(() => {
+            setActiveIndex(-1);
+            setIsAnimating(false);
+          }, 300); // Duration of the last letter's animation
+          timeoutsRef.current.push(resetTimeout);
+        }
+      }, index * 200); // Delay between letters
+
+      timeoutsRef.current.push(timeout);
+    });
+  };
+
   return (
     <>
       {showFireworks && (
@@ -195,9 +233,22 @@ export const MagicWord: React.FC = () => {
       )}
       <span
         onClick={handleClick}
-        className="shake cursor-pointer text-green-900 font-semibold"
+        onMouseEnter={startAnimation}
+        className="cursor-pointer text-green-900 font-semibold shake"
       >
-        magic
+        {text.split("").map((letter, index) => (
+          <span
+            key={index}
+            className="inline-block transform transition-transform duration-300 ease-out"
+            style={{
+              transform:
+                activeIndex === index ? "translateY(-10px)" : "translateY(0)",
+              opacity: activeIndex === index ? "0.8" : "1",
+            }}
+          >
+            {letter}
+          </span>
+        ))}
       </span>
     </>
   );

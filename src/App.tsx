@@ -129,14 +129,20 @@ const App = () => {
       {/* Full-Height Section */}
       <div
         id="About"
-        className="min-h-screen flex flex-col justify-center items-center text-center relative"
+        className="min-h-screen flex flex-col justify-center items-center text-center relative px-3"
       >
-        <div className="flex flex-row mt-6">
-          <h1 className="ml-13 text-6xl text-green-800 mr-4 asset-regular tracking-tighter">
+        <div className="flex flex-col items-center mt-6">
+          <h1
+            className="ml-13  text-green-800 mr-4 asset-regular tracking-tighter"
+            style={{ fontSize: "calc(2vw + 1rem)" }}
+          >
             Hi, I'm Marko!{" "}
           </h1>
         </div>
-        <div className="text-lg text-green-950 mt-6">
+        <div
+          className="text-sm md:text-lg text-green-950"
+          style={{ fontSize: "calc(0.5vw + 0.5rem)" }}
+        >
           <p>
             Software Developer and Computer Science student at Gettysburg
             College, crafting
