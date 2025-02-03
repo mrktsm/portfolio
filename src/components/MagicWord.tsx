@@ -118,17 +118,15 @@ class Firework {
     }
   }
 }
-
 export const MagicWord: React.FC = () => {
   const [showFireworks, setShowFireworks] = useState<boolean>(false);
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
   const fireworksDisplayRef = useRef<number | null>(null);
   const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
-  const [shakeEnabled, setShakeEnabled] = useState(true); // Track whether shaking is enabled
-  const [iterations, setIterations] = useState(0);
   const [activeIndex, setActiveIndex] = useState(-1);
   const [isAnimating, setIsAnimating] = useState(false);
   const timeoutsRef = useRef<number[]>([]);
+  const [animationCount, setAnimationCount] = useState(0);
   const text = "magic";
 
   useEffect(() => {
@@ -172,23 +170,21 @@ export const MagicWord: React.FC = () => {
 
   const handleClick = (): void => {
     setShowFireworks(true);
-    setShakeEnabled(false);
-    setTimeout(() => setShowFireworks(false), 2000);
+    setTimeout(() => setShowFireworks(false), 3000);
+    // Stop animation on click
+    setAnimationCount(5);
   };
 
   useEffect(() => {
-    const element: any = document.querySelector(".shake");
-    if (!shakeEnabled || iterations >= 3) return;
-    // Initialize the interval without the delay for class removal and re-addition
-    const interval = setInterval(() => {
-      element.classList.remove("shake"); // Remove the shake class
-      void element.offsetWidth; // Trigger reflow/repaint to ensure the class removal is processed
-      element.classList.add("shake"); // Re-add the shake class
-      setIterations((prev) => prev + 1);
-    }, 4200); // Repeat every 2 seconds
+    // Remove the shake effect and replace with a jump effect every 2 seconds
+    if (animationCount < 5 || isAnimating) {
+      const interval = setInterval(() => {
+        startAnimation();
+      }, 3000); // Repeat every 2 seconds
 
-    return () => clearInterval(interval);
-  }, [shakeEnabled, iterations]);
+      return () => clearInterval(interval);
+    }
+  }, [animationCount, isAnimating]);
 
   useEffect(() => {
     return () => {
@@ -197,7 +193,6 @@ export const MagicWord: React.FC = () => {
   }, []);
 
   const startAnimation = () => {
-    if (isAnimating) return;
     setIsAnimating(true);
 
     // Clear any existing timeouts
@@ -214,6 +209,7 @@ export const MagicWord: React.FC = () => {
           const resetTimeout = setTimeout(() => {
             setActiveIndex(-1);
             setIsAnimating(false);
+            setAnimationCount((prevCount) => prevCount + 1); // Increment the animation count
           }, 300); // Duration of the last letter's animation
           timeoutsRef.current.push(resetTimeout);
         }
@@ -234,7 +230,7 @@ export const MagicWord: React.FC = () => {
       <span
         onClick={handleClick}
         onMouseEnter={startAnimation}
-        className="cursor-pointer text-green-900 font-semibold shake hover:text-green-700"
+        className="cursor-pointer text-green-900 font-semibold hover:text-green-600"
       >
         {text.split("").map((letter, index) => (
           <span
@@ -243,7 +239,7 @@ export const MagicWord: React.FC = () => {
             style={{
               transform:
                 activeIndex === index ? "translateY(-10px)" : "translateY(0)",
-              opacity: activeIndex === index ? "0.8" : "1",
+              opacity: activeIndex === index ? "0.65" : "1",
             }}
           >
             {letter}
