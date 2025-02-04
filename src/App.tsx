@@ -96,7 +96,7 @@ const App = () => {
   }, []);
 
   return (
-    <div className="bg-amber-50">
+    <div className="bg-[#fffbf2]">
       {/* Top Navigation */}
       <div className="absolute top-5 right-5 flex space-x-6 z-50">
         <a
@@ -133,15 +133,15 @@ const App = () => {
       >
         <div className="flex flex-col items-center mt-6">
           <h1
-            className="ml-13  text-green-800 mr-4 asset-regular tracking-tighter"
-            style={{ fontSize: "calc(2vw + 1rem)" }}
+            className="ml-13  text-green-950 mr-4 asset-regular tracking-tighter"
+            style={{ fontSize: "calc(2vw + 0.5rem)" }}
           >
             Hi, I'm Marko!{" "}
           </h1>
         </div>
         <div
           className="text-sm md:text-lg text-green-950"
-          style={{ fontSize: "calc(0.5vw + 0.5rem)" }}
+          style={{ fontSize: "calc(0.5vw + 0.4rem)" }}
         >
           <p>
             Software Developer and Computer Science student at Gettysburg
@@ -168,7 +168,7 @@ const App = () => {
           isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
         }`}
       >
-        <h2 className="text-2xl text-green-950 font-bold text-left mb-6">
+        <h2 className="text-2xl font-bold text-green-950 text-left mb-6 ">
           Projects
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
@@ -186,7 +186,7 @@ const App = () => {
               }`}
             >
               {project.imageUrl ? (
-                <div className="w-full aspect-video bg-amber-50 border-3 border-green-800 transition-transform duration-300 hover:bg-amber-100">
+                <div className="w-full aspect-video  border-3 border-green-950 transition-transform duration-300 hover:bg-amber-50">
                   <img
                     src={project.imageUrl}
                     alt={project.title}
@@ -194,8 +194,8 @@ const App = () => {
                   />
                 </div>
               ) : (
-                <div className="w-full aspect-video bg-amber-50 border-3 border-green-800 hover:bg-amber-100 flex items-center justify-center transition-transform duration-300">
-                  <h3 className="text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-green-900 to-green-500 inter-300">
+                <div className="w-full aspect-video  border-3 border-green-950 hover:bg-amber-50 flex items-center justify-center transition-transform duration-300">
+                  <h3 className="text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-green-950 to-green-700 inter-300">
                     {project.title}
                   </h3>
                 </div>
@@ -238,8 +238,8 @@ const App = () => {
           </p>
         </div>
       </div>
-      <div id="contact" className="bg-green-950 text-amber-50 pb-40 mt-12">
-        <div className="bg-green-950 text-amber-50 mt-12">
+      <div id="contact" className="bg-[#02150b] text-amber-50 pb-40 mt-12">
+        <div className=" text-amber-50 mt-12">
           <div className="max-w-5xl mx-auto px-8">
             <div className="flex justify-between items-start w-full">
               <div className="text-left">
