@@ -101,26 +101,26 @@ const App = () => {
       <div className="absolute top-5 right-5 flex space-x-6 z-50">
         <a
           href="#About"
-          className="text-green-900 text-lg hover:text-green-600"
+          className="text-green-900 text-md hover:text-green-600"
         >
           About Me
         </a>
         <a
           href="#projects"
-          className="text-green-900 text-lg hover:text-green-600"
+          className="text-green-900 text-md hover:text-green-600"
         >
           Projects
         </a>
         <a
           href="#contact"
-          className="text-green-900 text-lg hover:text-green-600"
+          className="text-green-900 text-md hover:text-green-600"
         >
           Contact
         </a>
         <a
           href="/markos-updated-resume.pdf"
           download="MarkoTsymbaliuk_Resume.pdf"
-          className="text-green-900 text-lg hover:text-green-600"
+          className="text-green-900 text-md hover:text-green-600"
         >
           Resume
         </a>
@@ -133,7 +133,7 @@ const App = () => {
       >
         <div className="flex flex-col items-center mt-6">
           <h1
-            className="ml-13  text-green-950 mr-4 asset-regular tracking-tighter"
+            className="ml-2 text-green-950 mr-4 asset-regular tracking-tighter"
             style={{ fontSize: "calc(2vw + 0.5rem)" }}
           >
             Hi, I'm Marko!{" "}
