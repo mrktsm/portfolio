@@ -133,7 +133,7 @@ const App = () => {
       >
         <div className="flex flex-col items-center mt-6">
           <h1
-            className="ml-2 text-green-950 mr-4 asset-regular tracking-tighter"
+            className="ml-2 text-green-900 mr-4 asset-regular tracking-tighter"
             style={{ fontSize: "calc(2vw + 0.5rem)" }}
           >
             Hi, I'm Marko!{" "}
@@ -186,7 +186,7 @@ const App = () => {
               }`}
             >
               {project.imageUrl ? (
-                <div className="w-full aspect-video  border-3 border-green-950 transition-transform duration-300 hover:bg-amber-50">
+                <div className="w-full aspect-video  border-3 border-green-900 transition-transform duration-300 hover:bg-amber-50">
                   <img
                     src={project.imageUrl}
                     alt={project.title}
@@ -194,7 +194,7 @@ const App = () => {
                   />
                 </div>
               ) : (
-                <div className="w-full aspect-video  border-3 border-green-950 hover:bg-amber-50 flex items-center justify-center transition-transform duration-300">
+                <div className="w-full aspect-video  border-3 border-green-900 hover:bg-amber-50 flex items-center justify-center transition-transform duration-300">
                   <h3 className="text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-green-950 to-green-700 inter-300">
                     {project.title}
                   </h3>
@@ -238,7 +238,7 @@ const App = () => {
           </p>
         </div>
       </div>
-      <div id="contact" className="bg-[#02150b] text-amber-50 pb-40 mt-12">
+      <div id="contact" className="bg-green-950 text-amber-50 pb-40 mt-12">
         <div className=" text-amber-50 mt-12">
           <div className="max-w-5xl mx-auto px-8">
             <div className="flex justify-between items-start w-full">
