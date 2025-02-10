@@ -225,11 +225,11 @@ const App = () => {
           style={{ fontSize: "calc(0.5vw + 0.4rem)" }}
         >
           <p>
-            Software Developer and Computer Science student at Gettysburg
-            College, crafting
+            Computer Science student and Economics Minor at Gettysburg College,
+            making
           </p>
           <p>
-            impactful software with React, Spring Boot, AI, and a touch of code{" "}
+            cool things happen with React, Spring Boot, AI, and a touch of code{" "}
             <MagicWord />.
           </p>
         </div>
