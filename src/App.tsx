@@ -22,6 +22,7 @@ import { DiRedis } from "react-icons/di";
 const App = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [hoveredProject, setHoveredProject] = useState<string | null>(null);
   const projectsRef = useRef(null);
 
   const projects = [
@@ -29,6 +30,7 @@ const App = () => {
       title: "CodeCafe",
       subtitle: "Collaborative Code Editor",
       imageUrl: "/images/codecafe_final.png",
+      // screenshot: "/images/climately-ss.png",
       description: "A full-stack web application with real-time features.",
       technologies: [
         { icon: <FaReact />, name: "React" },
@@ -46,6 +48,7 @@ const App = () => {
       title: "Spamurai",
       subtitle: "AI Email Companion",
       imageUrl: "/images/spamurai_white_2.png",
+      // screenshot: "/images/climately-ss.png",
       description: "A full-stack web application with real-time features.",
       technologies: [
         { icon: <FaReact />, name: "React" },
@@ -59,6 +62,7 @@ const App = () => {
     {
       title: "Dermafyr",
       subtitle: "YCP '24 Winner",
+      screenshot: "/images/dermafyr-ss1.png",
       description: "A full-stack web application with real-time features.",
       technologies: [
         { icon: <FaReact />, name: "React" },
@@ -75,6 +79,7 @@ const App = () => {
       title: "Climately",
       subtitle: "HackHarvard '24",
       imageUrl: "/images/climately-final.png",
+      screenshot: "/images/climately-ss.png",
       description: "A full-stack web application with real-time features.",
       technologies: [
         { icon: <FaReact />, name: "React" },
@@ -88,6 +93,7 @@ const App = () => {
       title: "Thesaurus Rex",
       subtitle: "Dictionary at a Click",
       imageUrl: "/images/trexpng-cover-2.png",
+      // screenshot: "/images/climately-ss.png",
       description: "A full-stack web application with real-time features.",
       technologies: [
         { icon: <IoLogoJavascript />, name: "JavaScript" },
@@ -239,7 +245,7 @@ const App = () => {
       <div
         ref={projectsRef}
         id="projects"
-        className={`w-full px-8 py-16 max-w-4xl mx-auto transform transition-all duration-1000 ${
+        className={`w-full px-8 py-16 max-w-[60rem] mx-auto transform transition-all duration-1000 ${
           isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
         }`}
       >
@@ -259,22 +265,44 @@ const App = () => {
                   ? "opacity-100 translate-y-0"
                   : "opacity-0 translate-y-10"
               }`}
+              onMouseEnter={() => setHoveredProject(project.title)}
+              onMouseLeave={() => setHoveredProject(null)}
             >
-              {project.imageUrl ? (
-                <div className="w-full aspect-video  border-3 border-green-900 transition-transform duration-300 hover:bg-amber-50">
-                  <img
-                    src={project.imageUrl}
-                    alt={project.title}
-                    className="w-full h-full object-cover"
-                  />
+              <div className="w-full aspect-video border-3 border-green-900 transition-transform duration-300 hover:bg-amber-50">
+                <div
+                  className="w-full aspect-video border-1 border-green-900 relative overflow-hidden group transition-transform duration-300 hover:bg-amber-50"
+                  onMouseEnter={() => setHoveredProject(project.title)}
+                  onMouseLeave={() => setHoveredProject(null)}
+                >
+                  {/* Default Image */}
+                  {project.imageUrl && (
+                    <img
+                      src={project.imageUrl}
+                      alt={project.title}
+                      className="w-full h-full object-cover duration-500"
+                    />
+                  )}
+
+                  {/* Screenshot (Appears on Hover) */}
+                  {project.screenshot && (
+                    <img
+                      src={project.screenshot}
+                      alt={`${project.title} Screenshot`}
+                      className="w-full h-full object-cover absolute top-0 left-0 opacity-0 transition-opacity duration-500 group-hover:opacity-100"
+                    />
+                  )}
+
+                  {/* If no images exist, show text */}
+                  {!project.imageUrl && (
+                    <div className="w-full h-full flex items-center justify-center aspect-video">
+                      <h3 className="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-green-950 to-green-700 inter-300">
+                        {project.title}
+                      </h3>
+                    </div>
+                  )}
                 </div>
-              ) : (
-                <div className="w-full aspect-video  border-3 border-green-900 hover:bg-amber-50 flex items-center justify-center transition-transform duration-300">
-                  <h3 className="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-green-950 to-green-700 inter-300">
-                    {project.title}
-                  </h3>
-                </div>
-              )}
+              </div>
+
               <div className="flex flex-row justify-between items-center w-full">
                 <span className="flex flex-row justify-center items-center">
                   <h3 className="text-left text-sm font-semibold text-green-950 mt-4 mr-2">
@@ -317,7 +345,7 @@ const App = () => {
       </div>
       <div id="contact" className="bg-green-950 text-amber-50 pb-40 mt-12">
         <div className=" text-amber-50 mt-12">
-          <div className="max-w-4xl mx-auto px-8">
+          <div className="max-w-[60rem] mx-auto px-8">
             <div className="flex justify-between items-start w-full">
               <div className="text-left">
                 <h2 className="text-sm mt-10 mb-4">Contact me: </h2>
