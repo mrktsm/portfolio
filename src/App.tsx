@@ -228,7 +228,7 @@ const App = () => {
         <h2 className="text-2xl font-bold text-green-950 text-left mb-6 sm:text-lg">
           Projects
         </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-16 sm:text-xs">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-16 ">
           {projects.map((project, index) => (
             <a
               href={project.link}
@@ -259,13 +259,11 @@ const App = () => {
               )}
               <div className="flex flex-row justify-between items-center w-full">
                 <span className="flex flex-row justify-center items-center">
-                  <h3 className="text-left text-sm font-semibold text-green-950 mt-4 mr-2 sm:text-xs">
+                  <h3 className="text-left text-sm font-semibold text-green-950 mt-4 mr-2">
                     {project.title}
                   </h3>
-                  <h3 className="text-left text-sm text-green-950 mt-4 sm:text-xs">
-                    |
-                  </h3>
-                  <h3 className="text-left text-sm text-green-950 mt-4 ml-2 sm:text-xs">
+                  <h3 className="text-left text-sm text-green-950 mt-4">|</h3>
+                  <h3 className="text-left text-sm text-green-950 mt-4 ml-2">
                     {project.subtitle}
                   </h3>
                 </span>
@@ -275,7 +273,7 @@ const App = () => {
                       <span className="absolute hidden group-hover:block bg-black text-white text-xs rounded px-2 py-1 -top-8 whitespace-nowrap">
                         {tech.name}
                       </span>
-                      <span className="text-green-950 group-hover:text-green-700 text-sm sm:text-xs">
+                      <span className="text-green-950 group-hover:text-green-700 text-sm">
                         {tech.icon}{" "}
                       </span>
                     </span>
