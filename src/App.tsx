@@ -144,7 +144,8 @@ const App = () => {
           </a>
           <a
             href="/markos-updated-resume.pdf"
-            download="MarkoTsymbaliuk_Resume.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
             className="block px-4 py-2 text-green-900 hover:bg-green-50"
             onClick={() => setIsMenuOpen(false)}
           >
@@ -173,7 +174,8 @@ const App = () => {
           </a>
           <a
             href="/markos-updated-resume.pdf"
-            download="MarkoTsymbaliuk_Resume.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
             className="text-green-900 text-md hover:text-green-600"
           >
             Resume
