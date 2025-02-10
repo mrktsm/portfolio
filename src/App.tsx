@@ -13,9 +13,14 @@ import { IoLogoElectron } from "react-icons/io5";
 import { GrMysql } from "react-icons/gr";
 import { FaRaspberryPi } from "react-icons/fa";
 import { BiLogoPostgresql } from "react-icons/bi";
+import { RiTailwindCssFill } from "react-icons/ri";
+import { IoLogoJavascript } from "react-icons/io";
+import { RxHamburgerMenu } from "react-icons/rx";
+import { motion } from "framer-motion";
 
 const App = () => {
   const [isVisible, setIsVisible] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const projectsRef = useRef(null);
 
   const projects = [
@@ -67,9 +72,9 @@ const App = () => {
       imageUrl: "/images/trexpng-cover-2.png",
       description: "A full-stack web application with real-time features.",
       technologies: [
+        { icon: <IoLogoJavascript />, name: "JavaScript" },
         { icon: <FaReact />, name: "React" },
-        { icon: <SiSpringboot />, name: "Spring Boot" },
-        { icon: <PiOpenAiLogoLight />, name: "OpenAI" },
+        { icon: <RiTailwindCssFill />, name: "Tailwind CSS" },
       ],
       link: "https://github.com/mrktsm/thesaurus-rex",
     },
@@ -98,32 +103,82 @@ const App = () => {
   return (
     <div className="bg-[#fffbf2]">
       {/* Top Navigation */}
-      <div className="absolute top-5 right-5 flex space-x-6 z-50">
-        <a
-          href="#About"
-          className="text-green-900 text-md hover:text-green-600"
+      <div className="absolute top-5 right-5 z-50">
+        {/* Hamburger Button */}
+        <button
+          onClick={() => setIsMenuOpen(!isMenuOpen)}
+          className="text-green-900 text-2xl focus:outline-none cursor-pointer md:hidden"
         >
-          About Me
-        </a>
-        <a
-          href="#projects"
-          className="text-green-900 text-md hover:text-green-600"
+          <RxHamburgerMenu />
+        </button>
+
+        {/* Animated Menu */}
+        <motion.div
+          initial={{ y: -30, opacity: 0 }}
+          animate={{ y: isMenuOpen ? 0 : -30, opacity: isMenuOpen ? 1 : 0 }}
+          transition={{ type: "spring", stiffness: 200, damping: 20 }}
+          className={`absolute right-0 top-full mt-2 w-35 rounded-bl-lg mr-20 shadow-lg py-2 border-x border-b border-gray-200 ${
+            isMenuOpen ? "block" : "hidden"
+          }`}
         >
-          Projects
-        </a>
-        <a
-          href="#contact"
-          className="text-green-900 text-md hover:text-green-600"
-        >
-          Contact
-        </a>
-        <a
-          href="/markos-updated-resume.pdf"
-          download="MarkoTsymbaliuk_Resume.pdf"
-          className="text-green-900 text-md hover:text-green-600"
-        >
-          Resume
-        </a>
+          <a
+            href="#About"
+            className="block px-4 py-2 text-green-900 hover:bg-green-50"
+            onClick={() => setIsMenuOpen(false)}
+          >
+            About Me
+          </a>
+          <a
+            href="#projects"
+            className="block px-4 py-2 text-green-900 hover:bg-green-50"
+            onClick={() => setIsMenuOpen(false)}
+          >
+            Projects
+          </a>
+          <a
+            href="#contact"
+            className="block px-4 py-2 text-green-900 hover:bg-green-50"
+            onClick={() => setIsMenuOpen(false)}
+          >
+            Contact
+          </a>
+          <a
+            href="/markos-updated-resume.pdf"
+            download="MarkoTsymbaliuk_Resume.pdf"
+            className="block px-4 py-2 text-green-900 hover:bg-green-50"
+            onClick={() => setIsMenuOpen(false)}
+          >
+            Resume
+          </a>
+        </motion.div>
+
+        <div className="hidden md:flex space-x-6">
+          <a
+            href="#About"
+            className="text-green-900 text-md hover:text-green-600"
+          >
+            About Me
+          </a>
+          <a
+            href="#projects"
+            className="text-green-900 text-md hover:text-green-600"
+          >
+            Projects
+          </a>
+          <a
+            href="#contact"
+            className="text-green-900 text-md hover:text-green-600"
+          >
+            Contact
+          </a>
+          <a
+            href="/markos-updated-resume.pdf"
+            download="MarkoTsymbaliuk_Resume.pdf"
+            className="text-green-900 text-md hover:text-green-600"
+          >
+            Resume
+          </a>
+        </div>
       </div>
 
       {/* Full-Height Section */}
@@ -134,7 +189,7 @@ const App = () => {
         <div className="flex flex-col items-center mt-6">
           <h1
             className="ml-2 text-green-900 mr-4 asset-regular tracking-tighter"
-            style={{ fontSize: "calc(2vw + 0.5rem)" }}
+            style={{ fontSize: "calc(1.5vw + 1rem)" }}
           >
             Hi, I'm Marko!{" "}
           </h1>
@@ -153,9 +208,9 @@ const App = () => {
           </p>
         </div>
         <div className="absolute bottom-5 text-green-950 flex flex-col items-center text-sm">
-          <p>the good stuff</p>
+          <p>all the good stuff</p>
           <a href="#projects">
-            <BsArrowDown className="text-3xl" />
+            <BsArrowDown className="text-2xl" />
           </a>
         </div>
       </div>
@@ -164,7 +219,7 @@ const App = () => {
       <div
         ref={projectsRef}
         id="projects"
-        className={`w-full px-8 py-16 max-w-5xl mx-auto transform transition-all duration-1000 ${
+        className={`w-full px-8 py-16 max-w-4xl mx-auto transform transition-all duration-1000 ${
           isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
         }`}
       >
@@ -195,28 +250,30 @@ const App = () => {
                 </div>
               ) : (
                 <div className="w-full aspect-video  border-3 border-green-900 hover:bg-amber-50 flex items-center justify-center transition-transform duration-300">
-                  <h3 className="text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-green-950 to-green-700 inter-300">
+                  <h3 className="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-green-950 to-green-700 inter-300">
                     {project.title}
                   </h3>
                 </div>
               )}
               <div className="flex flex-row justify-between items-center w-full">
                 <span className="flex flex-row justify-center items-center">
-                  <h3 className="text-left text-lg font-semibold text-green-950 mt-4 mr-2">
+                  <h3 className="text-left text-sm font-semibold text-green-950 mt-4 mr-2">
                     {project.title}
                   </h3>
-                  <h3 className="text-left text-lg text-green-950 mt-4">|</h3>
-                  <h3 className="text-left text-md text-green-950 mt-4 ml-2">
+                  <h3 className="text-left text-sm text-green-950 mt-4">|</h3>
+                  <h3 className="text-left text-sm text-green-950 mt-4 ml-2">
                     {project.subtitle}
                   </h3>
                 </span>
                 <div className="flex flex-wrap justify-center gap-2 mt-4 text-lg">
                   {project.technologies.map((tech, index) => (
                     <span key={index} className="relative group">
-                      <span className="absolute hidden group-hover:block bg-black text-white text-xs rounded px-2 py-1 -top-8">
+                      <span className="absolute hidden group-hover:block bg-black text-white text-xs rounded px-2 py-1 -top-8 whitespace-nowrap">
                         {tech.name}
                       </span>
-                      {tech.icon}
+                      <span className="text-green-950 group-hover:text-green-700 text-sm">
+                        {tech.icon}{" "}
+                      </span>
                     </span>
                   ))}
                 </div>
@@ -225,12 +282,12 @@ const App = () => {
           ))}
         </div>
         <div className="text-left mt-24">
-          <p className="text-lg text-green-950">
+          <p className="text-md text-green-950">
             Want to see more projects? Check out{" "}
             <a
               href="https://github.com/mrktsm"
               target="_blank"
-              className="text-lg text-green-800 hover:text-green-600"
+              className=" text-green-800 hover:text-green-600"
             >
               my GitHub
             </a>
@@ -240,7 +297,7 @@ const App = () => {
       </div>
       <div id="contact" className="bg-green-950 text-amber-50 pb-40 mt-12">
         <div className=" text-amber-50 mt-12">
-          <div className="max-w-5xl mx-auto px-8">
+          <div className="max-w-4xl mx-auto px-8">
             <div className="flex justify-between items-start w-full">
               <div className="text-left">
                 <h2 className="text-sm mt-10 mb-4">Contact me: </h2>
