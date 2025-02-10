@@ -17,6 +17,7 @@ import { RiTailwindCssFill } from "react-icons/ri";
 import { IoLogoJavascript } from "react-icons/io";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { motion } from "framer-motion";
+import { DiRedis } from "react-icons/di";
 
 const App = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -24,6 +25,23 @@ const App = () => {
   const projectsRef = useRef(null);
 
   const projects = [
+    {
+      title: "CodeCafe",
+      subtitle: "Collaborative Code Editor",
+      imageUrl: "/images/codecafe_final.png",
+      description: "A full-stack web application with real-time features.",
+      technologies: [
+        { icon: <FaReact />, name: "React" },
+        { icon: <SiSpringboot />, name: "Spring Boot" },
+        {
+          icon: <DiRedis size={22} className="-mt-1 -mx-0.5" />,
+          name: "Redis",
+        },
+        { icon: <GrMysql />, name: "MySQL" },
+        { icon: <FaAws />, name: "AWS" },
+      ],
+      link: "https://github.com/mrktsm/spamurai",
+    },
     {
       title: "Spamurai",
       subtitle: "AI Email Companion",
