@@ -190,7 +190,7 @@ const App = () => {
       >
         <div className="flex flex-col items-center mt-6">
           <h1
-            className="ml-2 text-green-900 mr-4 asset-regular tracking-tighter"
+            className="ml-2.5 text-green-900 mr-4 asset-regular tracking-tighter"
             style={{ fontSize: "calc(1.5vw + 1rem)" }}
           >
             Hi, I'm Marko!{" "}
@@ -225,10 +225,10 @@ const App = () => {
           isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
         }`}
       >
-        <h2 className="text-2xl font-bold text-green-950 text-left mb-6 ">
+        <h2 className="text-2xl font-bold text-green-950 text-left mb-6 sm:text-lg">
           Projects
         </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-16 sm:text-xs">
           {projects.map((project, index) => (
             <a
               href={project.link}
