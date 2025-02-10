@@ -22,7 +22,7 @@ import { DiRedis } from "react-icons/di";
 const App = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [hoveredProject, setHoveredProject] = useState<string | null>(null);
+  // const [hoveredProject, setHoveredProject] = useState<string | null>(null);
   const projectsRef = useRef(null);
 
   const projects = [
@@ -265,14 +265,14 @@ const App = () => {
                   ? "opacity-100 translate-y-0"
                   : "opacity-0 translate-y-10"
               }`}
-              onMouseEnter={() => setHoveredProject(project.title)}
-              onMouseLeave={() => setHoveredProject(null)}
+              // onMouseEnter={() => setHoveredProject(project.title)}
+              // onMouseLeave={() => setHoveredProject(null)}
             >
               <div className="w-full aspect-video border-3 border-green-900 transition-transform duration-300 hover:bg-amber-50">
                 <div
                   className="w-full aspect-video border-1 border-green-900 relative overflow-hidden group transition-transform duration-300 hover:bg-amber-50"
-                  onMouseEnter={() => setHoveredProject(project.title)}
-                  onMouseLeave={() => setHoveredProject(null)}
+                  // onMouseEnter={() => setHoveredProject(project.title)}
+                  // onMouseLeave={() => setHoveredProject(null)}
                 >
                   {/* Default Image */}
                   {project.imageUrl && (
