@@ -245,7 +245,7 @@ const App = () => {
       <div
         ref={projectsRef}
         id="projects"
-        className={`w-full px-8 py-16 max-w-[60rem] mx-auto transform transition-all duration-1000 ${
+        className={`w-full px-8 py-16 max-w-4xl mx-auto transform transition-all duration-1000 ${
           isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
         }`}
       >
@@ -270,7 +270,7 @@ const App = () => {
             >
               <div className="w-full aspect-video border-3 border-green-900 transition-transform duration-300 hover:bg-amber-50">
                 <div
-                  className="w-full aspect-video border-1 border-green-900 relative overflow-hidden group transition-transform duration-300 hover:bg-amber-50"
+                  className="w-full aspect-video border-0.5 border-green-900 relative overflow-hidden group transition-transform duration-300 hover:bg-amber-50"
                   // onMouseEnter={() => setHoveredProject(project.title)}
                   // onMouseLeave={() => setHoveredProject(null)}
                 >
