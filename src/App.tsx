@@ -259,11 +259,13 @@ const App = () => {
               )}
               <div className="flex flex-row justify-between items-center w-full">
                 <span className="flex flex-row justify-center items-center">
-                  <h3 className="text-left text-sm font-semibold text-green-950 mt-4 mr-2">
+                  <h3 className="text-left text-sm font-semibold text-green-950 mt-4 mr-2 sm:text-xs">
                     {project.title}
                   </h3>
-                  <h3 className="text-left text-sm text-green-950 mt-4">|</h3>
-                  <h3 className="text-left text-sm text-green-950 mt-4 ml-2">
+                  <h3 className="text-left text-sm text-green-950 mt-4 sm:text-xs">
+                    |
+                  </h3>
+                  <h3 className="text-left text-sm text-green-950 mt-4 ml-2 sm:text-xs">
                     {project.subtitle}
                   </h3>
                 </span>
@@ -273,7 +275,7 @@ const App = () => {
                       <span className="absolute hidden group-hover:block bg-black text-white text-xs rounded px-2 py-1 -top-8 whitespace-nowrap">
                         {tech.name}
                       </span>
-                      <span className="text-green-950 group-hover:text-green-700 text-sm">
+                      <span className="text-green-950 group-hover:text-green-700 text-sm sm:text-xs">
                         {tech.icon}{" "}
                       </span>
                     </span>
