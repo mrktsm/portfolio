@@ -117,7 +117,7 @@ const App = () => {
           initial={{ y: -30, opacity: 0 }}
           animate={{ y: isMenuOpen ? 0 : -30, opacity: isMenuOpen ? 1 : 0 }}
           transition={{ type: "spring", stiffness: 200, damping: 20 }}
-          className={`absolute right-0 top-full mt-2 w-35 rounded-bl-lg mr-20 shadow-lg py-2 border-x border-b border-gray-200 ${
+          className={`absolute right-0 top-full mt-2 w-35 rounded-bl-lg -mr-5 shadow-lg py-2 border-x border-b border-gray-200 ${
             isMenuOpen ? "block" : "hidden"
           }`}
         >
