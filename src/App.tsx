@@ -40,7 +40,7 @@ const App = () => {
         { icon: <GrMysql />, name: "MySQL" },
         { icon: <FaAws />, name: "AWS" },
       ],
-      link: "https://github.com/mrktsm/spamurai",
+      link: "https://github.com/mrktsm/codecafe",
     },
     {
       title: "Spamurai",
