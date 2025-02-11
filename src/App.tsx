@@ -17,7 +17,7 @@ import { RiTailwindCssFill } from "react-icons/ri";
 import { IoLogoJavascript } from "react-icons/io";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { motion } from "framer-motion";
-import { DiRedis } from "react-icons/di";
+// import { DiRedis } from "react-icons/di";
 
 const App = () => {
   const [isVisible, setIsVisible] = useState(false);
