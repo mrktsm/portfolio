@@ -93,7 +93,7 @@ const App = () => {
       title: "Thesaurus Rex",
       subtitle: "Dictionary at a Click",
       imageUrl: "/images/trexpng-cover-2.png",
-      // screenshot: "/images/climately-ss.png",
+      screenshot: "/images/thesaurus-ss.png",
       description: "A full-stack web application with real-time features.",
       technologies: [
         { icon: <IoLogoJavascript />, name: "JavaScript" },
