@@ -245,7 +245,7 @@ const App = () => {
       <div
         ref={projectsRef}
         id="projects"
-        className={`w-full px-8 py-16 max-w-[62.5rem] mx-auto transform transition-all duration-1000 ${
+        className={`w-full px-8 py-16 max-w-[58em] mx-auto transform transition-all duration-1000 ${
           isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
         }`}
       >
@@ -345,7 +345,7 @@ const App = () => {
       </div>
       <div id="contact" className="bg-green-950 text-amber-50 pb-40 mt-12">
         <div className=" text-amber-50 mt-12">
-          <div className="max-w-[62.5rem] mx-auto px-8">
+          <div className="max-w-[58rem] mx-auto px-8">
             <div className="flex justify-between items-start w-full">
               <div className="text-left">
                 <h2 className="text-sm mt-10 mb-4">Contact me: </h2>
