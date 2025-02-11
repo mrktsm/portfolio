@@ -48,7 +48,7 @@ const App = () => {
       title: "Spamurai",
       subtitle: "AI Email Companion",
       imageUrl: "/images/spamurai_white_2.png",
-      // screenshot: "/images/climately-ss.png",
+      screenshot: "/images/spamurai-ss.png",
       description: "A full-stack web application with real-time features.",
       technologies: [
         { icon: <FaReact />, name: "React" },
@@ -245,7 +245,7 @@ const App = () => {
       <div
         ref={projectsRef}
         id="projects"
-        className={`w-full px-8 py-16 max-w-[58em] mx-auto transform transition-all duration-1000 ${
+        className={`w-full px-8 py-16 max-w-[62.5em] mx-auto transform transition-all duration-1000 ${
           isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
         }`}
       >
