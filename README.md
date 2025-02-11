@@ -3,15 +3,15 @@
 This site showcases my projects, skills, and interests in software development, AI, and full-stack engineering. Whether you're exploring my work or looking to connect, you’re in the right place!
 
 ## 🛠 Built With
-React & Vite – Fast and lightweight UI
-Tailwind CSS – Modern, responsive design
-Vercel – Easy deployment
++ React & Vite – Fast and lightweight UI
++ Tailwind CSS – Modern, responsive design
++ Vercel – Easy deployment
 ## 📌 Features
-✅ Portfolio of my projects
-✅ Technical blog & insights
-✅ Contact & links to my work
+- ✅ Portfolio of my projects
+- ✅ Technical blog & insights
+- ✅ Contact & links to my work
 
-$$ 📩 Get in Touch
+## 📩 Get in Touch
 Find me on LinkedIn or check out my GitHub @MarkoTsymbaliuk.
 
 🎯 Building, learning, and iterating.
