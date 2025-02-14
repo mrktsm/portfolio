@@ -245,14 +245,14 @@ const App = () => {
       <div
         ref={projectsRef}
         id="projects"
-        className={`w-full px-8 py-16 max-w-[62.5%] mx-auto transform transition-all duration-1000 ${
+        className={`w-full px-4 md:px-8 py-16 max-w-full md:max-w-[62.5%] mx-auto transform transition-all duration-1000 ${
           isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
         }`}
       >
         <h2 className="text-2xl font-bold text-green-950 text-left mb-6">
           Projects
         </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-16 ">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16">
           {projects.map((project, index) => (
             <a
               href={project.link}
@@ -265,16 +265,10 @@ const App = () => {
                   ? "opacity-100 translate-y-0"
                   : "opacity-0 translate-y-10"
               }`}
-              // onMouseEnter={() => setHoveredProject(project.title)}
-              // onMouseLeave={() => setHoveredProject(null)}
             >
-              <div className="w-full aspect-video border-3 border-green-900 transition-transform duration-300 hover:bg-amber-50">
-                <div
-                  className="w-full aspect-video border-0.5 border-green-900 relative overflow-hidden group transition-transform duration-300 hover:bg-amber-50"
-                  // onMouseEnter={() => setHoveredProject(project.title)}
-                  // onMouseLeave={() => setHoveredProject(null)}
-                >
-                  {/* Default Image */}
+              {/* Project Card - Adjusted for mobile */}
+              <div className="w-full aspect-video border-3 border-green-900 transition-transform duration-300 hover:bg-amber-50 min-h-[200px]">
+                <div className="w-full h-full border-0.5 border-green-900 relative overflow-hidden group transition-transform duration-300 hover:bg-amber-50">
                   {project.imageUrl && (
                     <img
                       src={project.imageUrl}
@@ -283,7 +277,6 @@ const App = () => {
                     />
                   )}
 
-                  {/* Screenshot (Appears on Hover) */}
                   {project.screenshot && (
                     <img
                       src={project.screenshot}
@@ -291,11 +284,9 @@ const App = () => {
                       className="w-full h-full object-cover absolute top-0 left-0 opacity-0 transition-opacity duration-500 group-hover:opacity-100"
                     />
                   )}
-
-                  {/* If no images exist, show text */}
                   {!project.imageUrl && (
-                    <div className="w-full h-full flex items-center justify-center aspect-video">
-                      <h3 className="text-[max(3vw,2rem)] font-bold text-transparent bg-clip-text bg-gradient-to-r from-green-950 to-green-600 inter-300">
+                    <div className="w-full h-full flex items-center justify-center p-4">
+                      <h3 className="text-[max(2.25rem,min(7vw,2.75rem))] font-bold text-transparent bg-clip-text bg-gradient-to-r from-green-950 to-green-600 inter-300 text-center">
                         {project.title}
                       </h3>
                     </div>
@@ -303,24 +294,23 @@ const App = () => {
                 </div>
               </div>
 
-              <div className="flex flex-row justify-between items-center w-full">
-                <span className="flex flex-row justify-center items-center">
-                  <h3 className="text-left text-sm font-semibold text-green-950 mt-4 mr-2">
+              {/* Project Info - Modified for mobile */}
+              <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center w-full mt-4 space-y-2 sm:space-y-0">
+                <div className="flex flex-row items-center space-x-2">
+                  <h3 className="text-sm font-semibold text-green-950">
                     {project.title}
                   </h3>
-                  <h3 className="text-left text-sm text-green-950 mt-4">|</h3>
-                  <h3 className="text-left text-sm text-green-950 mt-4 ml-2">
-                    {project.subtitle}
-                  </h3>
-                </span>
-                <div className="flex flex-wrap justify-center gap-2 mt-4 text-lg">
+                  <span className="text-green-950">|</span>
+                  <h3 className="text-sm text-green-950">{project.subtitle}</h3>
+                </div>
+                <div className="flex flex-wrap gap-2 text-lg">
                   {project.technologies.map((tech, index) => (
                     <span key={index} className="relative group">
-                      <span className="absolute hidden group-hover:block bg-black text-white text-xs rounded px-2 py-1 -top-8 whitespace-nowrap">
+                      <span className="absolute hidden group-hover:block bg-black text-white text-xs rounded px-2 py-1 -top-8 whitespace-nowrap z-10">
                         {tech.name}
                       </span>
                       <span className="text-green-950 group-hover:text-green-700 text-sm">
-                        {tech.icon}{" "}
+                        {tech.icon}
                       </span>
                     </span>
                   ))}
@@ -329,13 +319,14 @@ const App = () => {
             </a>
           ))}
         </div>
+
         <div className="text-left mt-24">
           <p className="text-md text-green-950">
             Want to see more projects? Check out{" "}
             <a
               href="https://github.com/mrktsm"
               target="_blank"
-              className=" text-green-800 hover:text-green-600"
+              className="text-green-800 hover:text-green-600"
             >
               my GitHub
             </a>
@@ -343,11 +334,13 @@ const App = () => {
           </p>
         </div>
       </div>
+
+      {/* Contact Section - Improved mobile layout */}
       <div id="contact" className="bg-green-950 text-amber-50 pb-40 mt-12">
-        <div className=" text-amber-50 mt-12">
-          <div className="max-w-[62.5%] mx-auto px-8">
-            <div className="flex justify-between items-start w-full">
-              <div className="text-left">
+        <div className="mt-12">
+          <div className="max-w-full md:max-w-[62.5%] mx-auto px-4 md:px-8">
+            <div className="flex flex-col sm:flex-row justify-between items-start w-full space-y-6 sm:space-y-0">
+              <div className="text-left w-full sm:w-auto">
                 <h2 className="text-sm mt-10 mb-4">Contact me: </h2>
                 <p className="text-sm mb-2">
                   <a
@@ -376,7 +369,7 @@ const App = () => {
                   </a>
                 </p>
               </div>
-              <div className="text-right">
+              <div className="text-left sm:text-right w-full sm:w-auto">
                 <h2 className="text-sm mt-10">
                   Runs on React and pure determination.{" : )"}
                 </h2>
