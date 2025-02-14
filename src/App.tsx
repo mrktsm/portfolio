@@ -266,8 +266,8 @@ const App = () => {
                   : "opacity-0 translate-y-10"
               }`}
             >
-              {/* Project Card - Adjusted for mobile */}
-              <div className="w-full aspect-video border-3 border-green-900 transition-transform duration-300 hover:bg-amber-50 min-h-[200px]">
+              {/* Project Card */}
+              <div className="w-full aspect-video max-h-[400px] border-3 border-green-900 transition-transform duration-300 hover:bg-amber-50">
                 <div className="w-full h-full border-0.5 border-green-900 relative overflow-hidden group transition-transform duration-300 hover:bg-amber-50">
                   {project.imageUrl && (
                     <img
@@ -285,8 +285,8 @@ const App = () => {
                     />
                   )}
                   {!project.imageUrl && (
-                    <div className="w-full h-full flex items-center justify-center p-4">
-                      <h3 className="text-[max(2.25rem,min(7vw,2.75rem))] font-bold text-transparent bg-clip-text bg-gradient-to-r from-green-950 to-green-600 inter-300 text-center">
+                    <div className="w-full h-full flex items-center justify-center">
+                      <h3 className="text-[10vw] md:text-[2.5vw] font-bold text-transparent bg-clip-text bg-gradient-to-r from-green-950 to-green-600 inter-300 text-center px-4">
                         {project.title}
                       </h3>
                     </div>
@@ -294,7 +294,7 @@ const App = () => {
                 </div>
               </div>
 
-              {/* Project Info - Modified for mobile */}
+              {/* Project Info */}
               <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center w-full mt-4 space-y-2 sm:space-y-0">
                 <div className="flex flex-row items-center space-x-2">
                   <h3 className="text-sm font-semibold text-green-950">
