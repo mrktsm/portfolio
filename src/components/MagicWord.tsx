@@ -180,6 +180,15 @@ export const MagicWord: React.FC = () => {
     }
   }, [showFireworks, allowNewFireworks]);
 
+  useEffect(() => {
+    // Small delay to ensure the animation is visible after the component mounts
+    const initialTimeout = setTimeout(() => {
+      startAnimation();
+    }, 50);
+
+    return () => clearTimeout(initialTimeout);
+  }, []);
+
   const handleClick = (): void => {
     // Reset fireworks array and start new animation
     fireworksRef.current = [];
