@@ -184,7 +184,7 @@ export const MagicWord: React.FC = () => {
     // Small delay to ensure the animation is visible after the component mounts
     const initialTimeout = setTimeout(() => {
       startAnimation();
-    }, 50);
+    }, 550);
 
     return () => clearTimeout(initialTimeout);
   }, []);
