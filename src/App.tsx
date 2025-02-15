@@ -286,7 +286,7 @@ const App = () => {
                   )}
                   {!project.imageUrl && (
                     <div className="w-full h-full flex items-center justify-center">
-                      <h3 className="text-[10vw] md:text-[2.5vw] font-bold text-transparent bg-clip-text bg-gradient-to-r from-green-950 to-green-600 inter-300 text-center px-4">
+                      <h3 className="text-[10vw] md:text-[3vw] font-bold text-transparent bg-clip-text bg-gradient-to-r from-green-950 to-green-600 inter-300 text-center px-4">
                         {project.title}
                       </h3>
                     </div>
@@ -294,26 +294,33 @@ const App = () => {
                 </div>
               </div>
 
-              {/* Project Info */}
-              <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center w-full mt-4 space-y-2 sm:space-y-0">
-                <div className="flex flex-row items-center space-x-2">
-                  <h3 className="text-sm font-semibold text-green-950">
-                    {project.title}
-                  </h3>
-                  <span className="text-green-950">|</span>
-                  <h3 className="text-sm text-green-950">{project.subtitle}</h3>
-                </div>
-                <div className="flex flex-wrap gap-2 text-lg">
-                  {project.technologies.map((tech, index) => (
-                    <span key={index} className="relative group">
-                      <span className="absolute hidden group-hover:block bg-black text-white text-xs rounded px-2 py-1 -top-8 whitespace-nowrap z-10">
-                        {tech.name}
+              {/* Project Info - Updated for better wrapping */}
+              <div className="w-full mt-4">
+                <div className="flex flex-wrap gap-y-2 items-center justify-between">
+                  {/* Title and Subtitle */}
+                  <div className="flex items-center space-x-2">
+                    <h3 className="text-xs sm:text-sm font-semibold text-green-950">
+                      {project.title}
+                    </h3>
+                    <span className="text-green-950">|</span>
+                    <h3 className="text-xs sm:text-sm text-green-950">
+                      {project.subtitle}
+                    </h3>
+                  </div>
+
+                  {/* Technologies - Will move as a unit */}
+                  <div className="flex items-center gap-2">
+                    {project.technologies.map((tech, index) => (
+                      <span key={index} className="relative group">
+                        <span className="absolute hidden group-hover:block bg-black text-white text-xs rounded px-2 py-1 -top-8 whitespace-nowrap z-10">
+                          {tech.name}
+                        </span>
+                        <span className="text-green-950 group-hover:text-green-700 text-xs sm:text-sm">
+                          {tech.icon}
+                        </span>
                       </span>
-                      <span className="text-green-950 group-hover:text-green-700 text-sm">
-                        {tech.icon}
-                      </span>
-                    </span>
-                  ))}
+                    ))}
+                  </div>
                 </div>
               </div>
             </a>
