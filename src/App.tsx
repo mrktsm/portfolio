@@ -368,7 +368,7 @@ const App = () => {
                 </p>
                 <p className="text-sm">
                   <a
-                    href="www.linkedin.com/in/marko-tsymbaliuk-55615430b"
+                    href="https://www.linkedin.com/in/marko-tsymbaliuk-55615430b/"
                     target="_blank"
                     className="hover:text-green-300"
                   >
