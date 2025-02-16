@@ -273,7 +273,7 @@ const App = () => {
                     <img
                       src={project.imageUrl}
                       alt={project.title}
-                      className="w-full h-full object-cover duration-500"
+                      className="w-full h-full object-cover duration-500 hidden md:block"
                     />
                   )}
 
@@ -281,7 +281,7 @@ const App = () => {
                     <img
                       src={project.screenshot}
                       alt={`${project.title} Screenshot`}
-                      className="w-full h-full object-cover absolute top-0 left-0 opacity-0 transition-opacity duration-500 group-hover:opacity-100"
+                      className="w-full h-full object-cover absolute top-0 left-0 md:opacity-0 block md:transition-opacity md:duration-500 md:group-hover:opacity-100"
                     />
                   )}
                   {!project.imageUrl && (
