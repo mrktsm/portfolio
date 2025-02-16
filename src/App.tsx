@@ -167,7 +167,7 @@ const App = () => {
             Contact
           </a>
           <a
-            href="/markos-updated-resume.pdf"
+            href="/Marko_Tsymbaliuk_Resume_Feb2025.pdf"
             target="_blank"
             rel="noopener noreferrer"
             className="block px-4 py-2 text-green-900 hover:bg-green-50"
@@ -197,7 +197,8 @@ const App = () => {
             Contact
           </a>
           <a
-            href="/markos-updated-resume.pdf"
+            // href="/markos-updated-resume.pdf"
+            href="/Marko_Tsymbaliuk_Resume_Feb2025.pdf"
             target="_blank"
             rel="noopener noreferrer"
             className="text-green-900 text-md hover:text-green-600"
