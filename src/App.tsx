@@ -30,7 +30,7 @@ const App = () => {
       title: "CodeCafe",
       subtitle: "Collaborative Code Editor",
       imageUrl: "/images/codecafe-final-png-green-1.png",
-      screenshot: "/images/codecafe-final-png-green-1.png",
+      screenshot: "/images/codecafe-ss.png",
       description: "A full-stack web application with real-time features.",
       technologies: [
         { icon: <FaReact />, name: "React" },
