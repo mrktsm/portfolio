@@ -29,8 +29,8 @@ const App = () => {
     {
       title: "CodeCafe",
       subtitle: "Collaborative Code Editor",
-      imageUrl: "/images/codecafe-final-png-green.png",
-      screenshot: "/images/codecafe-final-png-green.png",
+      imageUrl: "/images/codecafe-final-png-green-1.png",
+      screenshot: "/images/codecafe-final-png-green-1.png",
       description: "A full-stack web application with real-time features.",
       technologies: [
         { icon: <FaReact />, name: "React" },
@@ -47,7 +47,7 @@ const App = () => {
     {
       title: "Spamurai",
       subtitle: "AI Email Companion",
-      imageUrl: "/images/spamurai-test-cover-2.png",
+      imageUrl: "/images/spamurai-test-cover-3.png",
       screenshot: "/images/spamurai-ss.png",
       description: "A full-stack web application with real-time features.",
       technologies: [
@@ -92,7 +92,7 @@ const App = () => {
     {
       title: "Thesaurus Rex",
       subtitle: "Dictionary at a Click",
-      imageUrl: "/images/trexpng-cover-6.png",
+      imageUrl: "/images/trexpng-cover-7.png",
       screenshot: "/images/thesaurus-ss.png",
       description: "A full-stack web application with real-time features.",
       technologies: [
@@ -286,7 +286,7 @@ const App = () => {
                   )}
                   {!project.imageUrl && (
                     <div className="w-full h-full flex items-center justify-center">
-                      <h3 className="text-[10vw] md:text-[3.5vw] font-bold text-transparent bg-clip-text bg-gradient-to-r from-green-950 to-green-600 open-sans-300 text-center px-4">
+                      <h3 className="text-[10vw] md:text-[3.25vw] font-bold text-transparent bg-clip-text bg-gradient-to-r from-green-950 to-green-600 open-sans-300 text-center px-4">
                         {project.title}
                       </h3>
                     </div>
