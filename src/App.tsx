@@ -17,7 +17,7 @@ import { RiTailwindCssFill } from "react-icons/ri";
 import { IoLogoJavascript } from "react-icons/io";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { motion } from "framer-motion";
-// import { DiRedis } from "react-icons/di";
+import { DiRedis } from "react-icons/di";
 
 const App = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -26,28 +26,28 @@ const App = () => {
   const projectsRef = useRef(null);
 
   const projects = [
-    // {
-    //   title: "CodeCafe",
-    //   subtitle: "Collaborative Code Editor",
-    //   imageUrl: "/images/codecafe_final.png",
-    //   // screenshot: "/images/climately-ss.png",
-    //   description: "A full-stack web application with real-time features.",
-    //   technologies: [
-    //     { icon: <FaReact />, name: "React" },
-    //     { icon: <SiSpringboot />, name: "Spring Boot" },
-    //     {
-    //       icon: <DiRedis size={22} className="-mt-1 -mx-0.5" />,
-    //       name: "Redis",
-    //     },
-    //     { icon: <GrMysql />, name: "MySQL" },
-    //     { icon: <FaAws />, name: "AWS" },
-    //   ],
-    //   link: "https://github.com/mrktsm/codecafe",
-    // },
+    {
+      title: "CodeCafe",
+      subtitle: "Collaborative Code Editor",
+      imageUrl: "/images/codecafe-final-png-green.png",
+      screenshot: "/images/codecafe-final-png-green.png",
+      description: "A full-stack web application with real-time features.",
+      technologies: [
+        { icon: <FaReact />, name: "React" },
+        { icon: <SiSpringboot />, name: "Spring Boot" },
+        {
+          icon: <DiRedis size={22} className="-mt-1 -mx-0.5" />,
+          name: "Redis",
+        },
+        { icon: <GrMysql />, name: "MySQL" },
+        { icon: <FaAws />, name: "AWS" },
+      ],
+      link: "https://github.com/mrktsm/codecafe",
+    },
     {
       title: "Spamurai",
       subtitle: "AI Email Companion",
-      imageUrl: "/images/spamurai_white_2.png",
+      imageUrl: "/images/spamurai-test-cover-2.png",
       screenshot: "/images/spamurai-ss.png",
       description: "A full-stack web application with real-time features.",
       technologies: [
@@ -78,7 +78,7 @@ const App = () => {
     {
       title: "Climately",
       subtitle: "HackHarvard '24",
-      imageUrl: "/images/climately-final.png",
+      imageUrl: "/images/climately-final-cover-3.png",
       screenshot: "/images/climately-ss.png",
       description: "A full-stack web application with real-time features.",
       technologies: [
@@ -92,7 +92,7 @@ const App = () => {
     {
       title: "Thesaurus Rex",
       subtitle: "Dictionary at a Click",
-      imageUrl: "/images/trexpng-cover-2.png",
+      imageUrl: "/images/trexpng-cover-6.png",
       screenshot: "/images/thesaurus-ss.png",
       description: "A full-stack web application with real-time features.",
       technologies: [
@@ -286,7 +286,7 @@ const App = () => {
                   )}
                   {!project.imageUrl && (
                     <div className="w-full h-full flex items-center justify-center">
-                      <h3 className="text-[10vw] md:text-[3vw] font-bold text-transparent bg-clip-text bg-gradient-to-r from-green-950 to-green-600 inter-300 text-center px-4">
+                      <h3 className="text-[10vw] md:text-[3.5vw] font-bold text-transparent bg-clip-text bg-gradient-to-r from-green-950 to-green-600 open-sans-300 text-center px-4">
                         {project.title}
                       </h3>
                     </div>
