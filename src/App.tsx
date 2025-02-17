@@ -346,7 +346,7 @@ const App = () => {
       {/* Contact Section - Improved mobile layout */}
       <div id="contact" className="bg-green-950 text-amber-50 pb-40 mt-12">
         <div className="mt-12">
-          <div className="max-w-full md:max-w-[62.5%] mx-auto px-4 md:px-8">
+          <div className="max-w-full md:max-w-[62.5%] mx-auto px-4 md:px-8 md:min-w-[768px]">
             <div className="flex flex-col sm:flex-row justify-between items-start w-full space-y-6 sm:space-y-0">
               <div className="text-left w-full sm:w-auto">
                 <h2 className="text-sm mt-10 mb-4">Contact me: </h2>
