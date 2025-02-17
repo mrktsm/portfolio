@@ -246,7 +246,7 @@ const App = () => {
       <div
         ref={projectsRef}
         id="projects"
-        className={`w-full px-4 md:px-8 py-16 max-w-full md:max-w-[62.5%] mx-auto transform transition-all duration-1000 ${
+        className={`w-full px-4 md:px-8 py-16 max-w-full md:max-w-[62.5%] mx-auto transform transition-all duration-1000 md:min-w-[768px] ${
           isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
         }`}
       >
@@ -287,7 +287,7 @@ const App = () => {
                   )}
                   {!project.imageUrl && (
                     <div className="w-full h-full flex items-center justify-center">
-                      <h3 className="text-[10vw] md:text-[3.25vw] font-bold text-transparent bg-clip-text bg-gradient-to-r from-green-950 to-green-600 open-sans-300 text-center px-4">
+                      <h3 className="text-[clamp(2.7rem,10vw,3.25vw)] font-bold text-transparent bg-clip-text bg-gradient-to-r from-green-950 to-green-600 open-sans-300 text-center px-4">
                         {project.title}
                       </h3>
                     </div>
