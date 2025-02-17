@@ -268,7 +268,7 @@ const App = () => {
               }`}
             >
               {/* Project Card */}
-              <div className="w-full aspect-video max-h-[400px] border-3 border-green-900 transition-transform duration-300 hover:bg-amber-50">
+              <div className="w-full aspect-video max-h-[400px] border-[2.5px] border-green-900 transition-transform duration-300 hover:bg-amber-50">
                 <div className="w-full h-full border-0.5 border-green-900 relative overflow-hidden group transition-transform duration-300 hover:bg-amber-50">
                   {project.imageUrl && (
                     <img
