@@ -246,7 +246,7 @@ const App = () => {
       <div
         ref={projectsRef}
         id="projects"
-        className={`w-full px-4 md:px-8 py-16 max-w-full md:max-w-[56%] mx-auto transform transition-all duration-1000 md:min-w-[768px] ${
+        className={`w-full px-4 md:px-8 py-16 max-w-full md:max-w-[63%] mx-auto transform transition-all duration-1000 md:min-w-[1025px] ${
           isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
         }`}
       >
@@ -282,7 +282,7 @@ const App = () => {
                     <img
                       src={project.screenshot}
                       alt={`${project.title} Screenshot`}
-                      className="w-full h-full object-cover absolute top-0 left-0 md:opacity-0 block md:transition-opacity md:duration-500 md:group-hover:opacity-100"
+                      className="w-full h-full object-cover absolute top-0 left-0 block md:transition-opacity md:duration-500 md:group-hover:opacity-100"
                     />
                   )}
                   {!project.imageUrl && (
@@ -346,7 +346,7 @@ const App = () => {
       {/* Contact Section - Improved mobile layout */}
       <div id="contact" className="bg-green-950 text-amber-50 pb-40 mt-12">
         <div className="mt-12">
-          <div className="max-w-full md:max-w-[62.5%] mx-auto px-4 md:px-8 md:min-w-[768px]">
+          <div className="max-w-full md:max-w-[62.5%] mx-auto px-4 md:px-8 md:min-w-[1025px]">
             <div className="flex flex-col sm:flex-row justify-between items-start w-full space-y-6 sm:space-y-0">
               <div className="text-left w-full sm:w-auto">
                 <h2 className="text-sm mt-10 mb-4">Contact me: </h2>
@@ -378,9 +378,7 @@ const App = () => {
                 </p>
               </div>
               <div className="text-left sm:text-right w-full sm:w-auto">
-                <h2 className="text-sm mt-10">
-                  Runs on React and pure determination.{" : )"}
-                </h2>
+                <h2 className="text-sm mt-10">Built with React.</h2>
                 <p className="text-sm mb-2">
                   <a
                     href="https://github.com/mrktsm/portfolio"
