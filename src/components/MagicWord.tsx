@@ -86,11 +86,20 @@ class Firework {
   updateParticles(): void {
     for (let i = this.particles.length - 1; i >= 0; i--) {
       const particle = this.particles[i];
+
       particle.x += particle.dx;
       particle.y += particle.dy;
-      particle.dy += 0.15;
-      particle.dx *= 0.99;
+      particle.dy += 0.15; // Gravity effect
+      particle.dx *= 0.99; // Air resistance
       particle.alpha -= 0.01;
+
+      // Bounce off walls
+      if (particle.x <= 0 || particle.x >= this.canvasWidth) {
+        particle.dx *= -0.8; // Reverse direction with damping
+      }
+      if (particle.y <= 0) {
+        particle.dy *= -0.8; // Reverse direction with damping
+      }
 
       this.ctx.beginPath();
       this.ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2);
@@ -133,6 +142,7 @@ export const MagicWord: React.FC = () => {
   const [isAnimating, setIsAnimating] = useState(false);
   const timeoutsRef = useRef<number[]>([]);
   const [animationCount, setAnimationCount] = useState(0);
+  const [isButtonDisabled, setIsButtonDisabled] = useState(false);
   const text = "magic";
 
   useEffect(() => {
@@ -190,6 +200,9 @@ export const MagicWord: React.FC = () => {
   }, []);
 
   const handleClick = (): void => {
+    if (isButtonDisabled) return; // Prevent multiple clicks
+
+    setIsButtonDisabled(true);
     // Reset fireworks array and start new animation
     fireworksRef.current = [];
     setShowFireworks(true);
@@ -198,6 +211,7 @@ export const MagicWord: React.FC = () => {
     // After 3 seconds, stop creating new fireworks but let existing ones finish
     setTimeout(() => {
       setAllowNewFireworks(false);
+      setIsButtonDisabled(false);
     }, 3000);
 
     setAnimationCount(5);
@@ -252,7 +266,7 @@ export const MagicWord: React.FC = () => {
         />
       )}
       <span
-        onClick={handleClick}
+        onClick={!isButtonDisabled ? handleClick : undefined}
         onMouseEnter={startAnimation}
         className="cursor-pointer text-green-900 font-semibold hover:text-green-600"
       >
