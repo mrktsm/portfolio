@@ -261,8 +261,13 @@ export const MagicWord: React.FC = () => {
             key={index}
             className="inline-block transform transition-transform duration-300 ease-out"
             style={{
-              transform:
-                activeIndex === index ? "translateY(-10px)" : "translateY(0)",
+              transform: `translateY(${
+                activeIndex === index
+                  ? window.innerWidth <= 768
+                    ? "-3.5px"
+                    : "-7.2px"
+                  : "0"
+              })`,
               opacity: activeIndex === index ? "0.65" : "1",
             }}
           >
