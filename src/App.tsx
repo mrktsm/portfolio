@@ -215,7 +215,7 @@ const App = () => {
       >
         <div className="flex flex-col items-center mt-6">
           <h1
-            className="ml-2.5 text-green-900 mr-4 asset-regular tracking-tighter scale-y-[150%]"
+            className="ml-3 text-green-900 mr-4 asset-regular tracking-tighter scale-y-[150%]"
             style={{ fontSize: "calc(1.5vw + 1rem)" }}
           >
             Hi, I'm Marko!{" "}
