@@ -223,7 +223,7 @@ const App = () => {
         </div>
         <div
           className="text-sm md:text-lg text-green-950"
-          style={{ fontSize: "calc(0.65vw + 0.48rem)" }}
+          style={{ fontSize: "calc(0.65vw + 0.4rem)" }}
         >
           <p>
             Computer Science student and Economics Minor at Gettysburg College,
