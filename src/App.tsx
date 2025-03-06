@@ -30,7 +30,7 @@ const App = () => {
       title: "CodeCafe",
       subtitle: "Collaborative Code Editor",
       imageUrl: "/images/codecafe-final-png-green-1.png",
-      screenshot: "/images/codecafe-ss.png",
+      screenshot: "/images/codecafe-rounded.jpg",
       description: "A full-stack web application with real-time features.",
       technologies: [
         { icon: <FaReact />, name: "React" },
@@ -48,7 +48,7 @@ const App = () => {
       title: "Spamurai",
       subtitle: "AI Email Companion",
       imageUrl: "/images/spamurai-test-cover-3.png",
-      screenshot: "/images/spamurai-ss.png",
+      screenshot: "/images/spamurai-rounded.jpg",
       description: "A full-stack web application with real-time features.",
       technologies: [
         { icon: <FaReact />, name: "React" },
@@ -62,7 +62,7 @@ const App = () => {
     {
       title: "Dermafyr",
       subtitle: "YCP '24 Winner",
-      screenshot: "/images/dermfayr-ss2.png",
+      screenshot: "/images/dermafyr-rounded.jpg",
       description: "A full-stack web application with real-time features.",
       technologies: [
         { icon: <FaReact />, name: "React" },
@@ -93,7 +93,7 @@ const App = () => {
       title: "Thesaurus Rex",
       subtitle: "Dictionary at a Click",
       imageUrl: "/images/trexpng-cover-8.png",
-      screenshot: "/images/thesaurus-ss.png",
+      screenshot: "/images/trex-rounded.jpg",
       description: "A full-stack web application with real-time features.",
       technologies: [
         { icon: <IoLogoJavascript />, name: "JavaScript" },
@@ -267,9 +267,8 @@ const App = () => {
                   : "opacity-0 translate-y-10"
               }`}
             >
-              {/* Project Card */}
-              <div className="w-full aspect-video max-h-[400px] border-[2.5px] border-green-900 transition-transform duration-300 hover:bg-amber-50">
-                <div className="w-full h-full border-0.5 border-green-900 relative overflow-hidden group transition-transform duration-300 hover:bg-amber-50">
+              <div className="w-full aspect-video max-h-[400px] border-[2.5px] border-green-900 relative group overflow-hidden">
+                <div className="w-full h-full border-0.5 border-green-900 relative overflow-hidden transition-transform duration-300 hover:bg-amber-50">
                   {project.imageUrl && (
                     <img
                       src={project.imageUrl}
@@ -277,7 +276,6 @@ const App = () => {
                       className="w-full h-full object-cover duration-500 hidden md:block"
                     />
                   )}
-
                   {project.screenshot && (
                     <img
                       src={project.screenshot}
@@ -292,13 +290,14 @@ const App = () => {
                       </h3>
                     </div>
                   )}
+
+                  {/* Shine effect */}
+                  {/* <div className="absolute top-0 -left-[200%] w-[200%] h-full bg-gradient-to-r from-transparent via-white/20 to-transparent transform group-hover:translate-x-[200%] transition-transform duration-500 ease-in-out" /> */}
                 </div>
               </div>
 
-              {/* Project Info - Updated for better wrapping */}
               <div className="w-full mt-4">
                 <div className="flex flex-wrap gap-y-2 items-center justify-between">
-                  {/* Title and Subtitle */}
                   <div className="flex items-center space-x-2">
                     <h3 className="text-xs sm:text-sm font-semibold text-green-950">
                       {project.title}
@@ -308,8 +307,6 @@ const App = () => {
                       {project.subtitle}
                     </h3>
                   </div>
-
-                  {/* Technologies - Will move as a unit */}
                   <div className="flex items-center gap-2">
                     {project.technologies.map((tech, index) => (
                       <span key={index} className="relative group">
