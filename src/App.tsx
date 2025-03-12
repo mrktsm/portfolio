@@ -167,7 +167,7 @@ const App = () => {
             Contact
           </a>
           <a
-            href="/Marko's Resume.pdf"
+            href="/MarkoResume.pdf"
             target="_blank"
             rel="noopener noreferrer"
             className="block px-4 py-2 text-green-900 hover:bg-green-50"
@@ -198,7 +198,7 @@ const App = () => {
           </a>
           <a
             // href="/markos-updated-resume.pdf"
-            href="/Marko's Resume.pdf"
+            href="/MarkoResume.pdf"
             target="_blank"
             rel="noopener noreferrer"
             className="text-green-900 text-md hover:text-green-600"
@@ -222,7 +222,7 @@ const App = () => {
           </h1>
         </div>
         <div
-          className="text-sm md:text-lg text-green-950"
+          className=" text-green-950 "
           style={{ fontSize: "calc(0.65vw + 0.4rem)" }}
         >
           <p>
@@ -326,7 +326,7 @@ const App = () => {
         </div>
 
         <div className="text-left mt-24">
-          <p className="text-md text-green-950">
+          <p className="text-md  text-green-950">
             Want to see more projects? Check out{" "}
             <a
               href="https://github.com/mrktsm"
